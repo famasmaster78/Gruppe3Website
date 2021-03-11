@@ -17,5 +17,12 @@ app.get("/", (req,res) => {
 	
 });
 
+// 404
+app.get("*", (req,res) => {
+
+	res.render("pages/error", {err: "Kunne ikke finde ønskede side", errCode: 404});
+
+})
+
 
 app.listen(port,() => { console.log("App started on port: " + port) });
